@@ -10,12 +10,21 @@ require("Diesel/Motor.php");
 require("IEException.php");
 
 require("Carro.php");
+require("Sedan.php");
+
+require("DesignPatterns/Factory.php");
 
 use Ford\Motor\Motor10;
 use Ford\Motor\Motor20;
 use Diesel\Motor as MotorDiesel;
 use Ford\Carro;
 
+$novo = \Ford\DesignPatterns\Factory::MontarFiesta("Azul");
+$novo->acelerar(10);
+
+var_dump($novo);
+
+/*
 $motorDiesel = new MotorDiesel(true);
 var_dump($motorDiesel);
 
@@ -55,15 +64,17 @@ $carro3 = new Carro($motorDiesel, "Laranja", "GTX");
 
 var_dump($carro3);
 
+*/
+
 /*
 echo $carro1->combustivel."\n";
 $carro1->combustivel = 10;
 $carro1->buzinar();
 
 echo Carro::MARCA."\n";
-*/
 
 var_dump($motor10, $carro1);
+*/
 
 /*
 
@@ -110,8 +121,10 @@ $carro1->abastecer(30);
  * 
  */
 
+/*
 $vet = array(10,23,43);
 echo count($vet)."\n";
 
 $motor20->acelerar(13);
 echo count($motor20)."\n";
+*/
